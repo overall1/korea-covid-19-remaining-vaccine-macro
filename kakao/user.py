@@ -9,7 +9,8 @@ from kakao.request import headers_vaccine
 
 # 쿠키를 통해 사용자의 정보를 불러오는 함수
 def check_user_info_loaded(jar):
-    user_info_api = 'https://vaccine.kakao.com/api/v1/user'
+    #user_info_api = 'https://vaccine.kakao.com/api/v1/user'
+    user_info_api = 'https://vaccine-map.kakao.com/map2?v=1'
     user_info_response = requests.get(user_info_api, headers=headers_vaccine, cookies=jar, verify=False)
     user_info_json = json.loads(user_info_response.text)
     if user_info_json.get('error'):
